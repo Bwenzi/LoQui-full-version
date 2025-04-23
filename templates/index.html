@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loqui</title>
+    <link rel="stylesheet" href="http://127.0.0.1:5100/css">
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+</head>
+<body class="flex">
+    <div class="app users flex-c hide">
+        <div class="head"></div>
+        <ul class="user-list">
+            <li class="user flex-center">
+                <div class="ico">
+                    <i class="ri-user-5-line"></i>
+                </div>
+                <div class="name">user</div>
+            </li>
+        </ul>
+    </div>
+    <div class="app sign-in flex-center">
+        <div class="head-wrap flex-center">
+            <h2 class="title text">Get Started</h2>
+            <div class="ico flex-center">
+                <i class="ri-account-pin-circle-fill"></i>
+            </div>
+        </div>
+        <div class="input flex-center-r">
+            <input type="text" id="user" placeholder="Enter your user name">
+            <div class="btn flex-center-r" id="submit">
+                <div class="ico">
+                    <i class="ri-arrow-right-line"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="app chat flex-c hide">
+        <div class="head flex-center-r">
+            <div class="username flex-center-r">
+                <div class="ico">
+                    <i class="ri-account-pin-circle-fill"></i>
+                </div>
+                <p id="username">Username</p>
+            </div>
+            <div class="title">
+                LoQui
+            </div>
+            <div class="time" id="time">12:59 PM</div>
+        </div>
+        <div class="upper-mid update">
+            <div class="text" id="new_user">
+            </div>
+        </div>
+        <div class="middle-wrap chat-msg">
+           <!--<div class="msg-wrap me">
+                <div class="profile">
+                    Username
+                </div>
+                <div class="msg">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis enim, quis cumque nisi dolores impedit mollitia eveniet quaerat rerum at inventore dolorum architecto fuga quod suscipit tempore cum assumenda deleniti!.</div>
+            </div>
+            <div class="msg-wrap other">
+                <div class="profile">Hedrers</div>
+                <div class="msg">
+                    <div class="text">Lorem ipsum dolor, sit amet consectetur </div></div>
+                </div>-->
+        </div>
+        <div class="lower-mid update flex">
+            <div class="text"id="activity">
+            </div>
+        </div>
+        <div class="bottom-wrap flex-center-r">
+            <div class="input">
+                <textarea name="msg" id="write_msg" placeholder="write your message here" ></textarea>
+            </div>
+            <div class="btn flex-center-r" id="send">
+                <i class="ri-flashlight-fill"></i>
+                <button class="">Send</button>
+            </div>
+        </div>
+    </div>
+    <script src="http://127.0.0.1:5100/js"></script>
+</body>
+</html>

@@ -1,0 +1,523 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Quicksand:wght@300..700&display=swap');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css");
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Quicksand, Helvetica, Ariel, sans-serif;
+    box-sizing: border-box;
+    transition: all .5s;
+}
+
+/* preset */
+:root{
+    --theme-color: #ee7d13;
+    --background-theme-color: #0f1924;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+.hide{
+    display: none !important;
+}
+
+i{
+    color: var(--theme-color);
+}
+
+input{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+button{
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.flex{
+    display: flex;
+}
+
+.flex-c{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.flex-center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+}
+
+.flex-center-r{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body{
+    margin: 10px;
+    height: 100vh;
+    width: 100vw;
+    background-color: #ffffff;
+    justify-content: center;
+    align-items: center;
+}
+
+.app{
+    background-color: var(--background-theme-color);
+    padding: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+/* chat interface*/
+
+.app.chat{
+    height: 90vh;
+    width: 70vw;
+    padding: 0;
+}
+
+.app.chat .head{
+    height: 60px;
+    width: 100%;
+    border-bottom: 1px solid var(--theme-color);
+    justify-content: space-between;
+    padding: 10px 20px;
+    color: var(--theme-color);
+}
+
+.app.chat .head .username{
+    gap: 10px;
+}
+
+.app.chat .head .username .ico i{
+    font-size: 1.5rem;
+}
+
+.app.app.chat .middle-wrap.chat-msg{
+    height: 470px;
+    width: 100%;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.middle-wrap.chat-msg .msg-wrap{
+    width: 100%;
+    padding: 2.5px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.middle-wrap.chat-msg .other{
+    align-items: flex-end;
+    width: 100%;
+}
+
+.middle-wrap.chat-msg .msg-wrap .profile{
+    color: var(--theme-color);
+    margin: 10px 0;
+    text-align: left;
+}
+
+.middle-wrap.chat-msg .msg-wrap .msg{
+    background-color: var(--theme-color);
+    color: var(--background-theme-color);
+    padding: 10px;
+    border-radius: 10px;
+    width: auto;
+    word-wrap: break-word;
+    text-overflow: clip;
+}
+
+.middle-wrap.chat-msg .msg-wrap.other .msg{
+    background-color: transparent;
+    color: var(--theme-color);
+    border-left: 4px solid var(--theme-color);
+    border-radius: 0px;
+}
+
+.app.chat .bottom-wrap{
+    margin: 0px;
+    width: 100%;
+    height: 100px;
+    padding: 0 10px;
+    align-items: center;
+}
+
+.bottom-wrap .input textarea{
+    background-color: transparent;
+    color: var(--theme-color);
+    border: none;
+    outline: none;
+    width: 300px;
+    height: 20px;
+    resize: none;
+    font-size: 1.05rem;
+}
+
+.bottom-wrap .input{
+    border: 1px solid var(--theme-color);
+    min-height: 40px;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+.bottom-wrap .btn{
+    background-color: var(--theme-color);
+    margin: 10px;
+    height: 40px;
+    width: 100px;
+    border-radius: 20px;
+}
+
+.bottom-wrap .btn i{
+    color:var(--background-theme-color);
+}
+
+.bottom-wrap .btn button{
+    background-color: transparent;
+    color: var(--background-theme-color);
+}
+
+/* Update interface*/
+.update{
+    margin: 10px 0;
+    color: #ee7d13;
+    animation-name: blink;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+}
+
+.update.lower-mid{
+    color: #ffffff;
+    margin: 0;
+    margin-top: 10px;
+    padding: 0 20px;
+    justify-content: flex-start;
+    text-align: left;
+    width: 100%;
+    font-size: .75rem;
+}
+
+.update.upper-mid{
+    animation-duration: .5s;
+}
+
+/*active users list*/
+.app.users{
+    margin: 10px;
+    min-height: 70vh;
+    max-height: 90vh;
+    width: 70px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.app.users .head{
+    background-color: var(--theme-color);
+    height: 10px;
+    width: 10px;
+    border-radius: 25px;
+    animation-name: blink;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+.app.users .user-list li{
+    list-style: none;
+    color: #ee7d13;
+    font-size: 1.25rem;
+    margin: 10px 0;
+}
+
+.app.users .user-list li .name{
+    font-size: 0.75rem;
+}
+
+/* sign-in interface */
+.app.sign-in{
+    height: 400px;
+    width: 400px;
+    gap: 40px;
+    border-radius: 10px;
+}
+
+
+.app.sign-in .title{
+    margin: 10px 0;
+    font-weight: 300;
+    color: var(--theme-color);
+}
+
+.app.sign-in .head-wrap .ico{
+    background-color: var(--background-theme-color);
+    border: 5px solid var(--theme-color);
+    height: 100px;
+    width: 100px;
+    margin-top: 10px;
+    border-radius: 60px;
+    font-size: 3.5rem;
+}
+
+.app.sign-in .input{
+    gap: 10px;
+}
+
+.app.sign-in .input input{
+    color: var(--theme-color);
+    border: 1px solid var(--theme-color);
+    font-size: 1.15rem;
+    border-radius: 50px;
+    padding: 15px 20px;
+}
+
+.app.sign-in .btn {
+    background-color: var(--theme-color);
+    padding: 5px;
+    height: 50px;
+    border-radius: 25px;
+    margin: 10px 0;
+    justify-content: flex-start;
+    cursor: pointer;
+}
+
+.app.sign-in .btn .ico{
+    background-color: var(--background-theme-color);
+    padding: 10px;
+    width: 40px;
+    border-radius: 20px;
+}
+
+.app.sign-in .input .btn button{
+    background-color: transparent;
+    width: 100px;
+    font-size: 1.15rem;
+    padding: 0.65rem;
+    cursor: pointer;
+}
+
+@keyframes blink {
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0.25;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+/* Responsiuve design*/
+@media (max-width: 900px){
+    body{
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        overflow-y: scroll;
+        padding: 0;
+        max-width: 700px;
+    }
+
+    .app.users{
+        min-height: 400px;
+        max-height: 600px;
+        width: 100px;
+        max-width: 280px;
+    }
+
+    .app.users .head{
+        width: 50px;
+        animation-duration: 3.5s;
+    }
+
+    .app.sign-in{
+        width: 300px;
+    }
+
+    .app.app.sign-in .input input{
+        width: 200px;
+        font-size: 1rem;
+    }
+
+    .app.app.sign-in .input input::placeholder{
+        font-size: 0.85rem;
+    }
+
+    .app.chat .middle-wrap.chat-msg{
+        height: 420px !important;
+    }
+
+
+    .app.chat{
+        width: 580px;
+        height: 580px;
+    }
+
+    .app.chat .head .title{
+        display: none;
+    }
+
+    .app.chat .bottom-wrap{
+        height: 100px;
+        padding-bottom: 10px;
+    }
+
+    .app.chat .bottom-wrap .input textarea{
+        width: 250px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 500px){
+    body{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        overflow-y: scroll;
+        padding: 0;
+        max-width: 400px;
+        height: 100vh;
+    }
+
+    .app.users{
+        min-height: 100px;
+        max-height: 100px;
+        height: 100px;
+        width: 350px;
+        max-width: 380px;
+    }
+
+    .app.users .user-list{
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+
+
+    .app.sign-in{
+        width: 300px;
+    }
+
+    .app.app.sign-in .input input{
+        width: 200px;
+        font-size: 1rem;
+    }
+
+    .app.app.sign-in .input input::placeholder{
+        font-size: 0.85rem;
+    }
+
+    .app.chat .middle-wrap.chat-msg{
+        height: 320px !important;
+    }
+
+    .app.users .head{
+        width: 200px;
+        animation-duration: 3.5s;
+    }
+
+    .app.chat{
+        width: 350px;
+        height: 450px;
+    }
+
+    .app.chat .head .title{
+        display: none;
+    }
+
+    .app.chat .bottom-wrap{
+        height: 100px;
+        padding-bottom: 10px;
+    }
+
+    .app.chat .bottom-wrap .input textarea{
+        width: 200px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 350px){
+    body{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        overflow-y: scroll;
+        padding: 0;
+        max-width: 300px;
+    }
+
+    .app.users{
+        height: 100px;
+        width: 250px;
+        max-width: 280px;
+    }
+
+    .app.users .user-list{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .app.sign-in{
+        width: 300px;
+    }
+
+    .app.app.sign-in .input input{
+        width: 200px;
+        font-size: 1rem;
+    }
+
+    .app.app.sign-in .input input::placeholder{
+        font-size: 0.85rem;
+    }
+
+    .app.chat .middle-wrap.chat-msg{
+        height: 320px !important;
+    }
+
+    .app.users .head{
+        width: 200px;
+        animation-duration: 3.5s;
+    }
+
+    .app.chat{
+        width: 280px;
+        height: auto;
+    }
+
+    .app.chat .head .title{
+        display: none;
+    }
+
+    .app.chat .bottom-wrap{
+        height: 100px;
+        padding-bottom: 10px;
+    }
+
+    .app.chat .bottom-wrap .input textarea{
+        width: 150px;
+        font-size: 0.95rem;
+    }
+
+    .app.chat .bottom-wrap .btn{
+        width: 40px;
+    }
+
+    .app.chat .bottom-wrap .btn button{
+        display: none;
+    }
+}
